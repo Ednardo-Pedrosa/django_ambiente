@@ -26,10 +26,8 @@ python3 -m venv env_${PROJECT_NAME}
 
 pip install django gunicorn psycopg2-binary  # Instalando pacotes no ambiente virtual
 
-# Step 4 — Cloning the Git Repository into the Project Directory
-git clone ${LINK_GIT} temp_repo
-mv temp_repo/* temp_repo/.* . 2>/dev/null || :
-rm -rf temp_repo
+# Step 4 — Cloning the Git Repository into a Subdirectory Named After the Project
+git clone ${LINK_GIT} ${PROJECT_NAME}  # Clonando o repositório em uma pasta com o nome do projeto
 
 # Step 5 — Displaying the Database, User, and Password
 echo "=========================================="
@@ -41,5 +39,5 @@ echo "Repositório Git clonado de: ${LINK_GIT}"
 echo "=========================================="
 
 # Step 6 — Ensure the terminal is left inside the project directory
-cd ~/${PROJECT_NAME}
+cd ~/${PROJECT_NAME}  # Entrando na pasta do projeto
 exec $SHELL
