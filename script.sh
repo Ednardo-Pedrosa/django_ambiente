@@ -22,7 +22,7 @@ mkdir -p ~/${PROJECT_NAME}
 cd ~/${PROJECT_NAME}
 
 python3 -m venv env_${PROJECT_NAME}
-source env_${PROJECT_NAME}/bin/activate  # Ativando o ambiente virtual
+. env_${PROJECT_NAME}/bin/activate  # Ativando o ambiente virtual
 
 pip install django gunicorn psycopg2-binary  # Instalando pacotes no ambiente virtual
 
